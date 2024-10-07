@@ -1,0 +1,11 @@
+.pointer{
+    cursor: pointer
+}
+
+.texto-derecha{
+    text-align: right;
+}
+
+.margen-derecho-boton{
+    margin-right: 10px;
+}

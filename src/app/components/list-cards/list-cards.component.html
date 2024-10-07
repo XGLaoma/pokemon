@@ -1,0 +1,23 @@
+<app-header></app-header>
+
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col pointer" *ngFor="let nombresPokemon of nombres index as i" (click)="delattePokemon(i + contador + 1)">
+        <div class="card h-100 text-center">
+          <div class="card-header texto-derecha"><span class="badge bg-success">{{i + contador + 1}}</span></div>
+          <span class="badge badge-pill badge-primary"> </span>
+  
+          <div class="card-body">
+            <h5 class="card-title">{{ nombresPokemon.name }}</h5>
+          </div>        
+        </div>
+      </div>
+    </div>
+  
+    <div class="d-grid gap-2 d-md-block mt-3 mb-3">
+      <span class="margen-derecho-boton"><button  [disabled] = "deshabilitar === true" type="button" class="btn btn-outline-primary" (click)="decrementar(); buscarPokemon(nombresPokemon.previous)" *ngIf="previo === true">Anterior</button></span>
+      
+      <button  [disabled] = "deshabilitar === true" type="button" class="btn btn-outline-primary" (click)="incrementar(); buscarPokemon(nombresPokemon.next);"    *ngIf="siguiente === true">Siguiente</button>
+    </div>
+  </div>
+  <app-footer></app-footer>
